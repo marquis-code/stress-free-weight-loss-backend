@@ -4,7 +4,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { LocalStrategy } from './strategies/local.strategy';
+// import { LocalStrategy } from './strategies/local.strategy';
 import { UsersModule } from '../users/users.module';
 import { SessionSerializer } from './session.serializer';
 
@@ -17,7 +17,7 @@ import { SessionSerializer } from './session.serializer';
       signOptions: { expiresIn: '60m' },
     }),
   ],
-  providers: [AuthService, JwtStrategy, LocalStrategy, SessionSerializer],
+  providers: [AuthService, JwtStrategy, SessionSerializer],
   exports: [AuthService],
 })
 export class AuthModule {}

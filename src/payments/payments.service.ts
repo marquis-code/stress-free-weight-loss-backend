@@ -1,14 +1,10 @@
 // payments.service.ts
-import {
-  Injectable,
-  HttpService,
-  HttpException,
-  HttpStatus,
-} from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { CreatePaymentDto } from './dto/create-payment.dto';
 import { ConfigService } from '@nestjs/config';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { HttpService } from '@nestjs/axios';
 import { Payment, PaymentDocument } from './schemas/payment.schema';
 import { UsersService } from '../users/users.service';
 
